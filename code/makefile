@@ -1,19 +1,23 @@
 
-CC=g++ -std=c++11
+#CC=g++ -std=c++11
+CC=g++ -fopenmp
+
 CFLAGS=-c -Wall
 
 all: project
 	
-project: main.o 
-	$(CC) main.o -o project
+project: main.o grid.o
+	$(CC) main.o grid.o -o project
 	
-main.o: main.cpp
+main.o: main.cpp grid.o
 	$(CC) $(CFLAGS) main.cpp
 	
+grid.o: grid/grid.cpp grid/grid.h
+	$(CC) $(CFLAGS) grid/grid.cpp -o grid.o
 
 clean:
 	rm *o project 
-	
+
 #all: hello
 
 #hello: main.o factorial.o hello.o
