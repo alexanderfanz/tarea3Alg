@@ -11,6 +11,8 @@ class Grid {
 		~Grid();
 		void next_state_cell(int x, int y, int z);
 		void next_state();
+		int get_m();
+		void print();
 		
 	private:
 		int ****grid;	

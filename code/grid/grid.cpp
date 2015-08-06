@@ -1,8 +1,9 @@
 #include "grid.h"
+#include <stdio.h>
 
 Grid::Grid(int mm, int p1, int p2, int p3, int p4){
 	
-	m = m;
+	m = mm;
 	n1 = p1;
 	n2 = p2;
 	n3 = p3;
@@ -73,4 +74,24 @@ void Grid::next_state_cell(int x, int y, int z){
 
 void Grid::next_state(){
 	current = (current + 1) % 2;
+}
+
+int Grid::get_m(){
+	return m;
+}
+
+void Grid::print()
+{
+	printf("hi\n");
+	for (int i = 0; i < m; i++){
+		
+		for (int j = 0; j < m; j++) {
+			
+			for (int k = 0; k < m; k++)
+				printf("%d ", grid[current][i][j][k]);
+			printf("\n");
+		}
+		
+		printf("\n");
+	}
 }
