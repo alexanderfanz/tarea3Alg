@@ -1,6 +1,7 @@
 
 #CC=g++ -std=c++11
-CC=g++ -fopenmp -O3
+#CC=g++ -fopenmp -O3
+CC=g++ -fopenmp 
 
 CFLAGS=-c -Wall
 
